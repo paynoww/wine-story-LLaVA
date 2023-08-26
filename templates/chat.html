@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WineChat - Image Upload</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background: url('{{ url_for("static", filename="background_initial.jpg") }}') no-repeat center center fixed;
+            background-size: cover;
+            background-color: #f8f9fa;
+        }
+        .upload-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .upload-form {
+            background-color: rgba(204, 119, 68, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        }
+        h1 {
+            text-align: center;
+            color: #fff;
+            font-family: "Georgia", serif;
+        }
+        label {
+            color: #fff;
+        }
+        input[type="file"] {
+            border: none;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            width: 100%;
+            margin-bottom: 15px;
+        }
+        button[type="submit"] {
+            background-color: #963f00;
+            border: none;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container upload-container">
+        <div class="upload-form">
+            <h1>WineChat</h1>
+            <form action="/" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="image">Select an Image:</label>
+                    <input type="file" class="form-control" name="image" accept="image/*" required>
+                </div>
+                <button type="submit">Upload and Start Chatting</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
